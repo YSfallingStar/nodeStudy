@@ -5,19 +5,15 @@
   "bin": {
     "test02": "bin/www.js"
   },
-
   "dependencies": {
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3"
   },
-  
-  "devDependencies": {},
-
   "scripts": {
     "start": "nodemon ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
