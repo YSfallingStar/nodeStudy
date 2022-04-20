@@ -2,17 +2,22 @@
 
 const id = document.querySelector("#id");
 const pw = document.querySelector("#password");
+const name = document.querySelector("#name");
 const confirmPw = document.querySelector("#confirm-password");
 const registerBtn = document.querySelector("#button");
 
 registerBtn.addEventListener("click", register);
 
 function register() {
+    if (!id.value) return alert("아이디를 입력해주세요.");
+    if (!pw.value) return alert("비밀번호를 입력해주세요.");
+    if (!confirmPw.value) return alert("비밀번호 확인 절차를 진행해주세요.");
+    if(pw.value !== confirmPw.value) return alert("비밀번호가 일치하지 않습니다.");
+    
     const req = {
         id: id.value,
         name: name.value,
         pw: pw.value,
-        confirmPw: confirmPw.value,
     };
     console.log(req);
     fetch("/register", {
