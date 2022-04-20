@@ -13,17 +13,26 @@ class UserStorage{
         }, {});
         return userInfo;
     }
-    
-    static getUsers(...fields) {
-        // const users = this.#users;
+
+    static #getUsers(data, isAll, fields) {
+        const users = JSON.parse(data);
+        if (isAll) return users;
         const newUsers = fields.reduce((newUsers, field) => {
-            console.log(newUsers, field);
             if(users.hasOwnProperty(field)) {
                 newUsers[field] = users[field];
             }
             return newUsers;
         }, {});
         return newUsers;
+    }
+
+    static getUsers(isAll, ...fields) {
+        return fs
+        .readFile("./src/databases/users.json")
+        .then((data) => {
+            return this.#getUsers(data, isAll, fields);
+        })     // 읽어오기 성공했을 때
+        .catch(console.error);
     }
 
     static getUserInfo(id) {
@@ -35,11 +44,16 @@ class UserStorage{
         .catch(console.error);   // 읽어오기 실패했을 때 / 파라미터로 넘어온 변수는 생략 가능
     }
 
-    static save(userInfo) {
-        // const users = this.#users;
+    static async save(userInfo) {
+        const users = await this.getUsers(true);
+        if (users.id.includes(userInfo.id)) {
+            throw "이미 존재하는 아이디입니다.";
+        }
         users.id.push(userInfo.id);
         users.name.push(userInfo.name);
         users.pw.push(userInfo.pw);
+        // 데이터 추가
+        fs.writeFile("./src/databases/users.json", JSON.stringify(users));
         return { success: true };
     }
 }
