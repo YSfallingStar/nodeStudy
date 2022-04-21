@@ -14,7 +14,7 @@ function login() {
     fetch("/login", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(req), // JSON.stringify는 문자열로 출력을 해줌
     })
