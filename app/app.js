@@ -30,5 +30,4 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 
 
-
 module.exports = app;
