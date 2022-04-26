@@ -1,42 +1,38 @@
 // winston log 관리
-const { createLogger, transports, format } = require("winston");
-const { combine, timestamp, printf, label, simple, colorize } = format;
+const {createLogger, transports, format} = require("winston");
+const {
+    combine,
+    timestamp,
+    printf,
+    label,
+    simple,
+    colorize
+} = format;
 
-const printFormat = printf(({ timestamp, label, level, message }) => {
+const printFormat = printf(({timestamp, label, level, message}) => {
     return `${timestamp} [${label}] ${level} : ${message} `;
 });
 
 const printLogFormat = {
     file: combine(
-        label({
-            label: "YStar"
-        }),
-        timestamp({
-            format: "YYYY-MM-DD HH:mm:dd"
-        }),
+        label({label: "YStar"}),
+        timestamp({format: "YYYY-MM-DD HH:mm:dd"}),
         printFormat
     ),
-    console: combine(
-        colorize(),
-        simple()
-    )
+    console: combine(colorize(), simple())
 };
 
 const opts = {
-    file: new transports.File({
-        filename: "access.log",
-        dirname: "./log",
-        level: "info",
-        format: printLogFormat.file,
-    }),
-    console: new transports.Console({
-        level: "info",
-        format: printLogFormat.console,
-    }),
+    file: new transports.File(
+        {filename: "access.log", dirname: "./log", level: "info", format: printLogFormat.file}
+    ),
+    console: new transports.Console(
+        {level: "info", format: printLogFormat.console}
+    )
 };
 
 const logger = createLogger({
-    transports: [opts.file],
+    transports: [opts.file]
 });
 
 if (process.env.NODE_ENV !== "production") {
@@ -44,7 +40,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 logger.stream = {
-    write: (message) => logger.info(message),
+    write: (message) => logger.info(message)
 };
 
 module.exports = logger;

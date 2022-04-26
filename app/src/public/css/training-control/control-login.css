@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Akshar', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right bottom, #000000, #536349, #000000, #536349);
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.login-form {
+    position: relative;
+    z-index: 2;
+}
+
+.login-form h1 {
+    font-size: 32px;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.int-area {
+    width: 350px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    align-items: stretch;
+}
+
+.int-area span {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.int-area input {
+    display: block;
+    position: relative;
+    flex: 1 1 auto;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    flex: 1 1 auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#control-btn {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #999;
+    color: #fff;
+    font-weight: bold;
+}
+
+#control-btn:hover {
+    cursor: pointer;
+    background: rgb(95, 95, 95);
+}

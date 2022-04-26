@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+/* 전체 CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Akshar', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right bottom, #000000, #536349, #000000, #536349);
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* 사용자관리 section */
+.mgt-form {
+    display: flex;
+    z-index: 2;
+    float: left;
+}
+
+.mgt-form h1 {
+    display: flex;
+    font-size: 25px;
+    color: #fff;
+    width: 160px;
+    margin-bottom: 15px;
+}
+
+/* 사용자 검색 BOX */
+.search-box {
+    display: flex;
+    width: 450px;
+    height: 35px;
+    float: right;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box label {
+    display: flex;
+    font-size: 20px;
+    width: 130px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+#control-id-btn {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#control-id-btn:hover {
+    cursor: pointer;
+    background: rgb(95, 95, 95);
+}
+
+#search {
+    flex: 1 1 auto;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* 과정 표 */
+.table {
+    margin-top: 30px;
+}
+
+table {
+    width: 900px;
+    color: white;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 2px solid rgb(77, 77, 77);
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    height: 30px;
+}
+
+th {
+    background-color: rgb(128, 128, 128);
+}
+
+/* 버튼 */
+.btn-area {
+    position: relative;
+    float: right;
+    margin-top: 50px;
+}
+
+.btn-area button {
+    width: 120px;
+    height: 35px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #999;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-area button:hover {
+    cursor: pointer;
+    background: rgb(95, 95, 95);
+}

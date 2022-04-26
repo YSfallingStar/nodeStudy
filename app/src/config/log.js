@@ -3,7 +3,7 @@ const appRoot = require("app-root-path");
 
 const accessLogStream = fs.createWriteStream(
     `${appRoot}/log/access.log`,
-    { flags: "a"}
+    {flags: "a"}
 );
 
 module.exports = accessLogStream;

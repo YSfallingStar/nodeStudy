@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home/login.css">
-    <script src="/js/home/register.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="login-page">
-        <div class="form">
-          <form class="login-form">
-            <input id="id" type="text" placeholder="아이디"/>
-            <input id="name" type="text" placeholder="이름"/>
-            <input id="password" type="password" placeholder="비밀번호"/>
-            <input id="confirm-password" type="password" placeholder="비밀번호 확인"/>
-            <p id="button">sign up</p>
-            <p class="message">Already registered? <a href="/login">login</a></p>
-          </form>
-        </div>
-      </div>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/home/register.css">
+        <script src="/js/home/register.js" defer="defer"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="register-form">
+            <h1>드론 전술 훈련</h1>
+            <form class="register-form">
+                <div class="int-area">
+                    <input type="text" id="id" name="id" autocomplete="off" required="required">
+                    <label for="id">USER ID</label>
+                </div>
 
-<!-- Copyright (c) 2022 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) -->
+                <div class="int-area">
+                    <input type="text" id="name" name="name" autocomplete="off" required="required">
+                    <label for="name">USER NAME</label>
+                </div>
+
+                <div class="int-area">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="off"
+                        required="required">
+                    <label for="password">USER PASSWORD</label>
+                </div>
+
+                <div class="int-area">
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        autocomplete="off"
+                        required="required">
+                    <label for="password">CHECK PASSWORD</label>
+                </div><br>
+
+                <div class="btn-area">
+                    <button id="button" type="submit">SIGN UP</button>
+                </div>
+
+            </form>
+            <div class="caption">
+                <p class="message">이미 계정이 있으신가요?&nbsp;
+                    <a href="/login">&nbsp;->&nbsp;Click to Here</a>
+                </p>
+            </div>
+        </section>
+    </body>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+</html>

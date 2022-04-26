@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/preferences/preferences.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <section>
+            <h1>드론 전술훈련 환경 설정 - 단독 훈련</h1><br>
+            <select name="select-scenario" id="select-scenario">
+                <option value="">드론 전술훈련 시나리오 선택</option>
+                <option value="">daum.com</option>
+                <option value="">youtube.com</option>
+                <option value="">google.com</option>
+                <option value="">d2innovation.co.kr</option>
+            </select><br><br>
+            <table id="training-table">
+                <tr>
+                    <td>훈련지역&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><input type="text" id="training-area"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>드론 기체</td>
+                    <td>
+                        <select name="select-dron" id="select-dron">
+                            <option value="">선택해주세요.</option>
+                            <option value="">드론1</option>
+                            <option value="">드론2</option>
+                            <option value="">드론3</option>
+                            <option value="">드론4</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="text" id="input-dron" placeholder="드론 시작 위치">
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>기상 환경</td>
+                    <td>
+                        <select name="select-weather" id="select-weather">
+                            <option value="">선택해주세요.</option>
+                            <option value="">맑음</option>
+                            <option value="">흐림</option>
+                            <option value="">눈</option>
+                            <option value="">비</option>
+                            <option value="">안개</option>
+                        </select><br>
+                    </td>
+                </tr>
+            </table><br><hr><br>
+            <button type="button" id="pre-button">환경 설정</button>
+        </section>
+    </body>
+</html>

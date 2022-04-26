@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home/login.css">
-    <script src="/js/home/login.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="login-page">
-        <div class="form">
-          <form class="login-form">
-            <input id="id" type="text" placeholder="아이디"/>
-            <input id="password" type="password" placeholder="비밀번호"/>
-            <p id="button">login</p>
-            <p class="message">Not registered? <a href="/register">Create an account</a></p>
-          </form>
-        </div>
-      </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/home/login.css">
+        <script src="/js/home/login.js" defer="defer"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="login-form">
+            <h1>드론 전술 훈련</h1>
+            <form action="">
+                <div class="int-area">
+                    <input type="text" id="id" name="id" autocomplete="off" required="required">
+                    <label for="id">USER ID</label>
+                </div>
+                <div class="int-area">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="off"
+                        required="required">
+                    <label for="password">USER PASSWORD</label>
+                </div><br>
+                <div>
+                    <input type="checkbox" name="connectMode" id="connectMode">
+                    <label for="connectMode" style="color: #fff;">&nbsp;연동모드</label>
+                </div>
+                <div class="btn-area">
+                    <button id="button" type="submit">LOGIN</button>
+                </div>
+            </form>
+            <div class="caption">
+                <a href="/register">계정이 없으신가요?&nbsp;&nbsp;->&nbsp;Click to Here</a>
+                <br><br>
+            </div>
+        </section>
+    </body>
+    <script src="/js/jquery-3.6.0.min.js"></script>
 </html>
-
-<!-- Copyright (c) 2022 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) -->
