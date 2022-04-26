@@ -1,37 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
 
+:root {
+    --text-color: rgb(199, 199, 199);
+    --background-color: #1d1b1b;
+    --accent-color: rgb(170, 5, 5);
+}
+
 /* 전체 CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Akshar', sans-serif;
 }
 
 body {
-    font-family: 'Akshar', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     background: linear-gradient(to right bottom, #000000, #536349, #000000, #536349);
     background-size: cover;
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+/* form 박스 */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
 }
 
-/* 사용자관리 section */
 .mgt-form {
     display: flex;
     z-index: 2;
-    float: left;
 }
 
 .mgt-form h1 {
@@ -134,4 +134,101 @@ th {
 .btn-area button:hover {
     cursor: pointer;
     background: rgb(95, 95, 95);
+}
+
+/* navbar & hamburger bar */
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-color);
+    padding: 8px 12px;
+    top: 0;
+    color: var(--text-color);
+    z-index: 2;
+}
+
+.navbar__logo {
+    font-size: 24px;
+    color: var(--text-color)
+}
+
+.navbar__logo i {
+    color: var(--accent-color);
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li {
+    padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    cursor: pointer;
+    background-color: rgb(150, 110, 110);
+    border-radius: 100%;
+}
+
+.navbar__icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+}
+
+.navbar__icons {
+    padding: 8px 12px;
+}
+
+.navbar__toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
 }

@@ -17,7 +17,7 @@ const output = {
 
     control_login: (req, res) => {
         logger.info(`GET /solo 304 "훈련통제 로그인 화면으로 이동"`);
-        res.render("training-control/control-login");
+        res.render("home/control-login");
     },
 
     register: (req, res) => {
