@@ -1,5 +1,5 @@
 "use strict";
-
+// log 정보, user 정보 임포트(불러오기)
 const logger = require("../../config/logger");
 const User = require("../../models/User");
 
@@ -62,6 +62,7 @@ const output = {
     }
 };
 
+// user body에 요청 보내고 login함수, register함수 실행
 const process = {
     login: async (req, res) => {
         const user = new User(req.body);
@@ -98,11 +99,13 @@ const process = {
     }
 };
 
+// 변수 외부로 보내기
 module.exports = {
     output,
     process
 };
 
+// 응답 받고 log 터미널에 출력할 정보 설정
 const log = (response, url) => {
     if (response.err) {
         logger.error(

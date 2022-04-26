@@ -1,5 +1,6 @@
 "use strict";
-
+// express 서버 열기
+// router로 서버에 데이터 전송
 const express = require("express");
 const router = express.Router();
 

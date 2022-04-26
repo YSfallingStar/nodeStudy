@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
-
+/* 전체 CSS */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body::before {
     bottom: 0;
     left: 0;
 }
-
+/* 로그인 창 부분 */
 .login-form {
     position: relative;
     z-index: 2;
@@ -74,7 +74,7 @@ body::before {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-
+/* 버튼 */
 #control-btn {
     width: 100px;
     height: 50px;
